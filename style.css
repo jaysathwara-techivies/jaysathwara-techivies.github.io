@@ -8,6 +8,7 @@
 
 body{
     font-family: 'Oswald', sans-serif;
+    background-color: #D3D3D3;
 }
 .container{
   position: relative;
@@ -18,6 +19,11 @@ body{
     padding: 10px;
     align-items: center;
     background-color: #050301;
+    /* background-color: #116491; */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Stick it to the top of the viewport */
+    z-index: 100; 
 }
 
 .container .whatsapp{
@@ -29,13 +35,7 @@ body{
   width: 50px;
   height: 50px;
 }
-.navbar {
-  background-color: #333; /* Set the background color */
-  overflow: hidden; /* Ensure content doesn't overflow */
-  position: sticky; /* Make the navbar sticky */
-  top: 0; /* Stick it to the top of the viewport */
-  z-index: 100; /* Adjust the z-index if needed */
-}
+
 .container .navbar .logo img {
     width: 70px;
     height: 70px;
@@ -83,19 +83,22 @@ body{
 }
 .hero{
     width: 100%;
-    position: relative;
+    height: 100vh;
 }
 .hero .hero-content{
-  padding: 30px 50px;
-  position: absolute;
-  display: flex;
-  top: 5%;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  background-image: url('./assets/images/32250211-scaled.webp');
+  background-position: center center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px 100px;
+  background-blend-mode: hard-light;
+
 }
 .hero .hero-content .left{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   row-gap: 40px;
 }
 .hero .hero-content .quote span:first-child{
@@ -106,6 +109,7 @@ body{
 .hero .hero-content .quote span{
   font-size: 2.5rem;
   font-weight: 600;
+  color: #000;
 }
 .hero .hero-content .right img{
   width: 450px;
@@ -123,267 +127,245 @@ body{
 
 
 .hero .hero-content .para{
-  width: 70%;
+  width: 70%;  
   line-height: 1.5;
   letter-spacing: 1px;
   font-size: 20px;
   font-weight: 500;
+  color: #000;
 }
 .hero .hero-content .para button{
   margin-top: 2rem;
   padding: 10px 15px;
-  border: 2px solid #AF7A00;
-  background: transparent;
-  border-radius: 5px;
+  background-color: #AF7A00;
+    border-radius: 5px;
+    border: 0;
   font-size: 15px;
   font-weight: 700;
 }
+.hero .hero-content .para button a{
+  color: #fff;
+}
 .hero .hero-content .para button:hover{
-  background-color: #AF7A00;
+  background: transparent;
+  border: 1px solid #AF7A00;
   color: #fff;
   transform: scale(1.1);
   transition: all 0.6s ease-in-out;
 }
-.hero .slideshow-container .mySlides {display: none;}
-img {vertical-align: middle;}
 
-.hero .slideshow-container {
-    max-width: 1500px;
-    position: relative;
-    margin: auto;
-  }
-.hero .slideshow-container .mySlides{
-    background-position: center;
-    background-size: contain;
+.hero .hero-footer{
+  color: #fff;
 }
 
-  .active {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  .casino{
-    /* background-image: url('./assets/images/8018766.jpg'); */
-    width: 100%;
-    height: 250vh;
-    position: relative;
-    background-size: cover;
-  }
-  .casino::before {
-    content: "";
-    background-image: url('./assets/images/8018766.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-      filter: blur(10px);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-  }
-  .about-us{
-    width: 1000px;
-    margin:3rem auto;
-    display: flex;
-    align-items: center;
-  }
-  .about-us h2{
-    /* font-size: 24px;
-    color: white;
-    -webkit-text-stroke: 2px #AF7A00; */
-    background-clip: text;
-    background-image: #AF7A00;
-    color: #AF7A00;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    -webkit-text-stroke-color: transparent;
-    -webkit-text-stroke-width: 1em/16;
-  }
-  .about-us .right img{
-    width: 400px;
-    height: 300px;
-  }
-  .about-us .left p{
-    line-height: 1.6;
-    font-size: 20px;
-    color: #fff;
-  }
+.aboutus{
+  margin: 4rem 0;
+  padding: 70px;
+  text-align: center;
+}
+.aboutus .header{
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.aboutus .header h1{
+  color: #AF7A00;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+}
+.aboutus .about-content p{
+  margin: 20px 0;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: start;
+}
+.aboutus button{
+  margin-top: 2rem;
+  padding: 10px 15px;
+  background-color: #AF7A00;
+    border-radius: 5px;
+    border: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+.aboutus button a{
+  text-decoration: none;
+  color: #000;
+}
+.aboutus button:hover{
+  background: transparent;
+  border: 1px solid #AF7A00;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 0.6s ease-in-out;
+}
+ .hiw{
+  margin: 1rem 0;
+  padding: 70px;
+  text-align: center;
+ }
+ .hiw .header{
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+ }
+ .hiw .header h2{
+  color: #AF7A00;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+ }
+ .hiw .container{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  column-gap: 40px;
+  align-items: center;
+ }
+ .hiw .container .item{
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  height: 300px;
+  width: 300px;
+  background-color: #FFB100;
+  padding: 20px 30px;
+ }
+ .hiw .container .item button{
+  padding: 10px 20px;
+  background-color: #000;
+  border: 0;
+  cursor: pointer;
+ }
+ .hiw .container .item .content p{
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
 
-  .hiw{
-    width: 1000px;
-    margin:5rem auto;
+ }
+ .hiw .container .item a{
+  text-decoration: none;
+  color: #D3D3D3;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+ }
+
+ .whyus{
+  margin: 2rem 0;
+  padding: 70px;
+  text-align: center;
+ }
+ .whyus .header{
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+ }
+ .whyus .header h2{
+  color: #AF7A00;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+ }
+ .whyus .container{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  column-gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 40px;
+ }
+ .whyus .container .item .title h3{
+  font-size: 20px;
+  font-weight: bold;
+ }
+ .whyus .container .item{
+    width: 350px;
+    height: 300px;
+    padding: 30px 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .hiw .header h2{
-    color:#FFB100;
-    font-weight: bold;
-    font-size: 24px;
-    letter-spacing: 1px;
-    margin-bottom: 3rem;
-  }
-  .hiw .hiw-content{
-    display: flex;
-    column-gap: 30px;
-
-  }
-  .hiw .hiw-content .content h2{
-    color: #AF7A00;
-    font-weight: bold;
-    font-size: 40px;
-  }
-  .hiw .hiw-content .content{
-    width: 250px;
-    padding: 30px;
-    border: 2px solid #AF7A00;
-    border-radius: 50%;
-    text-align: center;
     cursor: pointer;
-    height: 200px;
-    animation: glowBorder 2s infinite alternate;    
-  }
-  @keyframes glowBorder {
-    0% {
-        border-color: transparent; /* Start with a transparent border */
-        box-shadow: 0 0 10px rgba(175, 122, 0, 0.7); /* Apply a subtle glow */
-    }
-    100% {
-        border-color: #AF7A00; /* End with the desired border color */
-        box-shadow: none; /* Remove the glow at the end */
-    }
+    row-gap: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+ .whyus .container .item:hover{
+  background-color: #FFB100;
+  transition: all 0.6s ease-in-out;
+  transform: scale(1.1);
+ }
+ .increment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ .counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 50px;
 }
-  .hiw .hiw-content .content span{
-    font-size: 24px;
-    color: #fff;
-  }
-  .hiw .hiw-content .content .click-me{
-    color: #050301;
-  }
-
-  .hiw .hiw-content .content .para{
-    width: 150px;
-    display: none;
-    transition: all 0.6s ease;
-    margin: auto;
-  }
-
-  .games{
-    width: 1000px;
-    margin:5rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .games .header{
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 24px;
-    color: #AF7A00;
-  }
-  .games .container{
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 20px;
-    justify-content: center;
-  }
-
-  .games .container img{
-    width: 300px;
-    height: 300px;
-  }
-  .partners{
-    width: 100%;
-    padding: 1rem 0;
-    margin:0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #150F00;
-  }
-  .partners .header{
-
-    margin-bottom: 3rem;
-    color: #AF7A00;
-    font-weight: bolder;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.5rem;
-  }
-  .partners .partner{
-    display: flex;
-    justify-content: center;
-    column-gap: 50px;
-    align-items: center;
-  }
-  .partners .partner img{
-    width: 250px;
-    height: 100px;
-    image-resolution:initial;
-  }
-  .wcj{
-    width: 100%;
-    padding: 1rem 0;
-    margin:0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #150F00;
-  }
-  .wcj .header{
-    margin-bottom: 3rem;
-    color: #AF7A00;
-    font-weight: bolder;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.5rem;
-  }
-
-  .wcj .container{
-    display: flex;
-    justify-content: center;
-    column-gap: 50px;
-    align-items: center;
-    text-align: center;
-  }
-  .wcj .container p{
-    font-size: 24px;
-    color: #fff;
-
-  }
-  .wcj .content{
-    width: 80%;
-    margin:3rem auto;
-  }
-  .wcj .content p{
-    border:2px solid #FFB100;
-    padding: 40px;
-    color: #fff;
-    font-size: 20px;
-    letter-spacing: 1.1px;
-    line-height: 1.6;
-  }
-  .wcj .container div:hover p{
-    color: #FFB100;
-  }
-  
-  .wcj .container img{
-    width: 100px;
-    height: 100px;
-  }
-
+.counter-container i{
+  color: #050301;
+  font-size: 50px;
+}
+.counter-container span{
+  color: #AF7A00;
+  font-size: 24px;
+}
+.counter {
+  font-size: 60px;
+  margin-top: 10px;
+}
+.games{
+  margin: 1rem 0;
+  padding: 70px;
+}
+.games .header{
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+}
+.games .header h2{
+  color: #AF7A00;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+}
+.games .container{
+  display: flex;
+  column-gap: 30px;
+  margin-bottom: 50px;
+}
+.games img{
+  height: 550px;
+}
+.games  .container .right .game{
+  margin: 20px;
+}
+.games .container .right .game p{
+  font-size: 20px ;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+}
+.games .container-2{
+  display: flex;
+  column-gap: 30px;
+}
+.games  .container-2 .left .game{
+  margin: 40px;
+}
+.games .container-2 .left .game p{
+  font-size: 20px ;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+}
   .footer{
     background: rgb(0,0,0);
     background: linear-gradient(14deg, rgba(0,0,0,1) 0%, rgba(54,38,0,1) 8%, rgba(175,122,0,1) 100%);    padding: 40px;
