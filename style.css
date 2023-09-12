@@ -275,6 +275,7 @@ img {vertical-align: middle;}
     display: none;
     transition: all 0.6s ease;
     margin: auto;
+    color:#fff;
   }
 
   .games{
